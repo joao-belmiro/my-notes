@@ -9,10 +9,31 @@
     font-family: "Poppins", sans-serif;
 }
 
+.btn-arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: #fff;
+
+    
+    &:hover {
+        background-color: rgba(208, 210, 220, .5);
+    }
+
+}
+
+.block-button {
+    cursor: not-allowed !important;
+}
+
 $global-font: "Poppins", sans-serif;
 $primary: #107dac;
 $secondary: #71c7ec;
-$contrast:#7F00FF;
+$contrast:#ffa500;
 $background: #FFF6F4;
 $dark: #000;
 $text-dark: #2c3e50;
