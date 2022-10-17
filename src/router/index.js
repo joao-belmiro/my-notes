@@ -8,7 +8,24 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: 'notes/:id',
+        name: 'dayNotes',
+        component: () => import('../views/EventList.vue')
+      },
+      {
+        path: '/nova-nota',
+        name: 'novaNota',
+        component: () => import('../views/FormEvent.vue')
+      },
+      {
+        path: '/editar-nota/:noteId',
+        name: 'editarNota',
+        component: () => import('../views/FormEvent.vue')
+      }
+    ]
   }
 ]
 
