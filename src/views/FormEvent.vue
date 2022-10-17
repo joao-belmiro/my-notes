@@ -13,13 +13,11 @@
         id="dateEvent"
       />
     </div>
-    <template>
     <vue-editor
       name="editor"
       class="editor-content"
       v-model="description"
       ></vue-editor>
-    </template>
     <div class="check-field">
       <input type="checkbox" name="pinned" v-model="pinned" id="pinned" />
       <label for="pinned">Prioridade</label>
@@ -48,12 +46,8 @@
 </template>
 
 <script>
-import VueEditor from 'vue-md-editor'
 
 export default {
-  components: {
-    VueEditor
-  },
   data () {
     return {
       id: null,

@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueEditor from 'vue-md-editor'
+
+Vue.use(VueEditor)
 Vue.config.productionTip = false
 
 new Vue({
