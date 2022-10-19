@@ -26,6 +26,7 @@ export default {
   watch: {
     async '$route.params.id' (day, dayPast) {
       this.date = atob(day)
+      console.log(this.date)
       this.fetchedNotes = await this.fetchNotesFomDay()
     }
   },

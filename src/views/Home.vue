@@ -93,11 +93,11 @@ export default {
 .n-wrapper {
   display: flex;
   flex-direction: row;
-  height: 85vh;
+  height: 90vh;
   .c-wrapper {
     height: 100%;
     padding: 1rem;
-    width: 35%;
+    width: 25%;
     .n-note-wrapper {
       padding-bottom: 1rem;
       display: flex;
@@ -137,7 +137,7 @@ export default {
     gap: 1rem;
     border-left: 1px solid $text-dark;
     padding: 1rem;
-    width: 65%;
+    width: 75%;
   }
 }
 </style>

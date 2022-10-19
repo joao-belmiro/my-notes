@@ -161,7 +161,7 @@ export default {
       return monthMatrix
     },
     toDatNotes (day) {
-      const param64 = btoa(`${this.currentYear}-${this.monthIndex + 1}-${day}`)
+      const param64 = btoa(`${this.currentYear}-${this.monthIndex + 1}-${day < 10 ? `0${day}` : `${day}`}`)
       if (this.validateSameDay(day)) this.$router.push({ name: 'dayNotes', params: { id: param64 } })
     },
     validateSameDay (dayClicked) {

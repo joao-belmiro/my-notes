@@ -9,7 +9,7 @@
     </div>
     <p class="date-content">{{ date | formatDate }}</p>
     <hr>
-    <div class="card-note-desc" v-html="getHtmlParsed()"></div>
+    <div class="card-note-desc" v-html="description"></div>
   </div>
 </template>
 
@@ -43,9 +43,6 @@ export default {
     }
   },
   methods: {
-    getHtmlParsed () {
-      return window._marked.parse(this.description)
-    },
     editNote () {
       this.$router.push({ name: 'editarNota', params: { noteId: this.id } })
     },

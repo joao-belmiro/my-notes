@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss">
 header {
-  height: 15vh;
+  height: 10vh;
   width: 100%;
   background-color: $dark;
   display: flex;

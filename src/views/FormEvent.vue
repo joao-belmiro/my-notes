@@ -1,8 +1,9 @@
 <template>
+<form @submit.prevent="saveData()">
   <div class="form-event">
     <div class="form-field">
       <label for="title">Titulo da nota</label>
-      <input type="text" name="title" id="title" v-model="title"/>
+      <input type="text" name="title" id="title" v-model="title" required/>
     </div>
     <div class="form-field">
       <label for="dateEvent">Data de Criação </label>
@@ -11,19 +12,23 @@
         type="datetime-local"
         name="dateEvent"
         id="dateEvent"
+        required
       />
     </div>
+    <div class="form-field">
+      <label for="editor">Descrição</label>
     <vue-editor
-      name="editor"
+      id="editor"
       class="editor-content"
       v-model="description"
       ></vue-editor>
+    </div>
     <div class="check-field">
-      <input type="checkbox" name="pinned" v-model="pinned" id="pinned" />
+      <input type="checkbox" required name="pinned" v-model="pinned" id="pinned" />
       <label for="pinned">Prioridade</label>
     </div>
     <div class="submit-form">
-      <button @click="saveData()" class="save">
+      <button type="submit" class="save">
         <img
           src="@/assets/save.svg"
           width="30px"
@@ -43,6 +48,7 @@
       </button>
     </div>
   </div>
+  </form>
 </template>
 
 <script>
@@ -54,7 +60,7 @@ export default {
       creationDate: null,
       title: null,
       pinned: false,
-      description: '# Exemplo de Markdown \n > Nota importante \n \n header 1 | header 2\n ---|--- \nrow 1 col 1 | row 1 col 2 \nrow 2 col 1 | row 2 col 2'
+      description: 'ola'
     }
   },
   async created () {
@@ -158,20 +164,15 @@ export default {
       }
     }
   }
-  .vmd .editor-content .active {
-    border-color: $primary !important;
-  }
   .editor-content {
     border: 3px solid $text-dark;
-    max-height: 500px;
+    border-radius: 6px;
 
-    .vmd-body {
-      height: 355px !important;
-
-      .vmd-editor {
-        background: $text-dark;
-        color: #fff;
-      }
+    .ql-container {
+      height: auto;
+    }
+    .ql-tooltip, .ql-editing {
+      left: 0px !important;
     }
   }
 
