@@ -24,13 +24,16 @@ header {
   align-items: center;
   gap: 2rem;
 
-  h1 {
-    color: $background;
-    letter-spacing: 5px;
-    span {
-      background: linear-gradient(to right, $text-dark, $primary);
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
+  a {
+    text-decoration: none;
+    h1 {
+      color: $background;
+      letter-spacing: 5px;
+      span {
+        background: linear-gradient(to right, $text-dark, $primary);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
     }
   }
 

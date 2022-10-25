@@ -69,19 +69,22 @@ export default {
     connectDB () {
       return new Promise((resolve, reject) => {
         const request = window.indexedDB.open('db-notes', 1)
-        request.onerror = e => {
+        request.onerror = (e) => {
           console.log('Error opening db', e)
           reject(e)
         }
 
-        request.onsuccess = e => {
+        request.onsuccess = (e) => {
           resolve(e.target.result)
         }
 
-        request.onupgradeneeded = e => {
+        request.onupgradeneeded = (e) => {
           console.log('onupgradeneeded')
           const db = e.target.result
-          const objectStore = db.createObjectStore('notes', { autoIncrement: true, keyPath: 'id' })
+          const objectStore = db.createObjectStore('notes', {
+            autoIncrement: true,
+            keyPath: 'id'
+          })
           console.log(objectStore)
         }
       })
@@ -102,29 +105,31 @@ export default {
       padding-bottom: 1rem;
       display: flex;
       flex-direction: row-reverse;
+      a {
+        text-decoration: none;
+        button {
+          background-color: $primary;
+          color: $background;
+          outline: none;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          height: 50px;
+          width: 200px;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-weight: normal;
+          letter-spacing: 2px;
 
-      button {
-        background-color: $primary;
-        color: $background;
-        outline: none;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        height: 50px;
-        width: 200px;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-weight: normal;
-        letter-spacing: 2px;
+          &:hover {
+            opacity: 0.8;
+          }
 
-        &:hover {
-          opacity: 0.8;
-        }
-
-        img {
-          margin-right: 12px;
+          img {
+            margin-right: 12px;
+          }
         }
       }
     }
