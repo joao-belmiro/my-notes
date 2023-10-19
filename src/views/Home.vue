@@ -97,10 +97,18 @@ export default {
   display: flex;
   flex-direction: row;
   height: 90vh;
+
+  @media (max-width: 999px) {
+    flex-direction: column;
+  }
   .c-wrapper {
     height: 100%;
     padding: 1rem;
     width: 25%;
+    @media (max-width: 999px) {
+      width: 100%;
+      height: auto;
+    }
     .n-note-wrapper {
       padding-bottom: 1rem;
       display: flex;
@@ -143,6 +151,11 @@ export default {
     border-left: 1px solid $text-dark;
     padding: 1rem;
     width: 75%;
+    @media (max-width: 999px) {
+      width: 100%;
+      border-left: none;
+      border-top: 1px solid #ddd;
+    }
   }
 }
 </style>

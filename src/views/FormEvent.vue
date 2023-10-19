@@ -156,16 +156,16 @@ export default {
       padding: 1rem;
       font-size: 1rem;
       border-radius: 6px;
-      border: 3px solid $text-dark;
+      border: 1px solid $text-dark;
 
       &:focus-within {
         outline: none;
-        border: 3px solid $primary;
+        border: 1px solid $primary;
       }
     }
   }
   .editor-content {
-    border: 3px solid $text-dark;
+    border: 1px solid $text-dark;
     border-radius: 6px;
 
     .ql-container {

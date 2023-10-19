@@ -3,12 +3,21 @@
     <div class="header-card">
       <h3>{{ title }}</h3>
       <div class="c-btn">
-      <button @click="editNote"><img width="25" height="25" src="@/assets/edit.svg" alt=""></button>
-      <button @click="deleteNote"><img  width="25" height="25" src="@/assets/delete_forever.svg" alt=""></button>
+        <button @click="editNote">
+          <img width="25" height="25" src="@/assets/edit.svg" alt="" />
+        </button>
+        <button @click="deleteNote">
+          <img
+            width="25"
+            height="25"
+            src="@/assets/delete_forever.svg"
+            alt=""
+          />
+        </button>
       </div>
     </div>
     <p class="date-content">{{ date | formatDate }}</p>
-    <hr>
+    <hr />
     <div class="card-note-desc" v-html="description"></div>
   </div>
 </template>
@@ -17,7 +26,13 @@
 export default {
   filters: {
     formatDate: function (data) {
-      return new Intl.DateTimeFormat('pt-BR', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' }).format(new Date(data))
+      return new Intl.DateTimeFormat('pt-BR', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+      }).format(new Date(data))
     }
   },
   props: {
@@ -49,7 +64,7 @@ export default {
     async deleteNote () {
       return new Promise((resolve, reject) => {
         const trans = this.$store.state.db.transaction(['notes'], 'readwrite')
-        trans.oncomplete = e => {
+        trans.oncomplete = (e) => {
           resolve()
         }
 
@@ -99,11 +114,11 @@ export default {
         border-radius: 50%;
 
         &:hover {
-          background-color: rgba(208, 210, 220, .5);
+          background-color: rgba(208, 210, 220, 0.5);
         }
       }
     }
-    }
+  }
   .date-content {
     margin-bottom: 10px;
     letter-spacing: 2px;
@@ -116,24 +131,26 @@ export default {
     ul {
       padding: 1.3rem;
     }
-  p, h1, h3 {
-    margin: 16px 0;
-  }
-  table {
-    border-spacing: 0px!important;
-    th {
-      background-color: $text-dark;
-      color: #fff;
-      letter-spacing: 2px;
-      font-weight: normal;
-      text-align: left;
+    p,
+    h1,
+    h3 {
+      margin: 16px 0;
     }
-    td,
-    th {
-      padding: 0.5rem;
-      border: 1px solid rgb(208, 210, 220);
+    table {
+      border-spacing: 0px !important;
+      th {
+        background-color: $text-dark;
+        color: #fff;
+        letter-spacing: 2px;
+        font-weight: normal;
+        text-align: left;
+      }
+      td,
+      th {
+        padding: 0.5rem;
+        border: 1px solid rgb(208, 210, 220);
+      }
     }
   }
-}
 }
 </style>

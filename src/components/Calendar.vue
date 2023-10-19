@@ -196,7 +196,9 @@ export default {
     color: $background;
     letter-spacing: 2px;
     font-size: 1rem;
-
+    @media (max-width: 999px) {
+      height: 40px;
+    }
     .y-selector {
       display: flex;
       flex-direction: row;
@@ -217,7 +219,7 @@ export default {
     width: 100%;
     padding: 1rem;
     li {
-      width: 14.3%;
+      flex: 1;
       list-style: none;
       text-align: center;
       font-weight: 600;
@@ -236,17 +238,17 @@ export default {
       flex-direction: row;
 
       li {
-        width: 14.3%;
+        flex: 1;
         text-align: center;
         list-style: none;
         font-weight: 600;
         letter-spacing: 1px;
 
         .btn-day {
-          padding: 12px;
+          padding: 12px 0;
 
           &:hover {
-            border-radius: 10px;
+            border-radius: 18px;
             cursor: pointer;
             color: $text-dark;
             background-color: rgba(208, 210, 220, 0.5);
